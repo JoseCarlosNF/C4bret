@@ -1,0 +1,17 @@
+{
+  "name": "C4bret",
+  "version": "1.0.0",
+  "description": "Implementação de Automato com pilha. Trabalho final da disciplina de Linguagens Formais e Autômatos. UFPA-2021-1",
+  "main": "index.js",
+  "repository": "git@github.com:JoseCarlosNF/C4bret.git",
+  "author": "JoseCarlosNF <josecarlos.n.f99@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "nodemon": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "type": "module"
+}
