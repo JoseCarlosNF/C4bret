@@ -1,5 +1,8 @@
 {
   "name": "C4bret",
+  "engines": {
+    "node": ">=15.0.0"
+  },
   "version": "1.0.0",
   "description": "Implementação de Automato com pilha. Trabalho final da disciplina de Linguagens Formais e Autômatos. UFPA-2021-1",
   "main": "index.js",
