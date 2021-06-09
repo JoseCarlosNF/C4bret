@@ -21,7 +21,7 @@ Final work of the discipline of Formal Languages and Automata.
 Implementation of a Pushdown Automaton.
 ```
 
-## Execução
+# Execução
 
 Exemplo de execução com os aquivos do próprio repositório.
 
