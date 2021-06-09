@@ -9,11 +9,20 @@
 <h1 align="center">C4bret</h1>
 
 # Descrição
-🇧🇷 **PT-BR**: Trabalho final da disciplina de Linguagens Formais e Autômatos.
-Implementação de um Automâto com Pilha.
 
-🇬🇧 **EN**: Final work of the discipline of Formal Languages and Automata.
+🇧🇷 pt-br
+
+```
+Trabalho final da disciplina de Linguagens Formais e Autômatos.
+Implementação de um Automâto com Pilha.
+```
+
+🇬🇧 en
+
+```
+Final work of the discipline of Formal Languages and Automata.
 Implementation of a Pushdown Automaton.
+```
 
 # Execução
 
