@@ -1,10 +1,18 @@
-import fs from 'fs';
+import fs from "fs";
 
-const file = fs.readFileSync("test/automato.txt", "utf-8");
-let lines = file.split("\n");
+// Recebe o arquivo
+const file = fs.readFileSync(process.argv.slice(2).toString(), "utf-8");
 
-for (let i = 1; i < lines.length; i++) {
-  lines[i] = lines[i].split(", ");
+// Armazena o conteúdo de cada linha do arquivo em um array
+let linhas = file.split("\n");
+
+// Transfere a primeira linha do arquivo para a variável primeira_linha
+let primeira_linha = linhas.shift();
+
+// Transforma as linhas seguintes, das regras de transição, cada uma em um array
+let regras_transicao = linhas;
+for (let i = 0; i < linhas.length; i++) {
+  regras_transicao[i] = linhas[i].split(", ");
 }
 
 let with_bracktes = lines[0].match(/{.*?}/gs);
