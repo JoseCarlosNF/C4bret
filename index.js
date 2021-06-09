@@ -11,10 +11,8 @@ let linhas = file.split("\n");
 let primeira_linha = linhas.shift();
 
 // Substitui parenteses e chaves por colchetes
-primeira_linha = primeira_linha.replaceAll("(", "[");
-primeira_linha = primeira_linha.replaceAll(")", "]");
-primeira_linha = primeira_linha.replaceAll("{", "[");
-primeira_linha = primeira_linha.replaceAll("}", "]");
+primeira_linha = primeira_linha.replaceAll(/\(|\{/g, "[");
+primeira_linha = primeira_linha.replaceAll(/\)|\}/g, "]");
 
 // Adiciona aspas duplas, aos elementos
 primeira_linha = primeira_linha.replace(/(\w\d|\w{2}|\w)/g, '"$1"');
@@ -24,7 +22,7 @@ let componentes_automato = eval(primeira_linha);
 
 // Transforma as linhas seguintes, das regras de transição, cada uma em um array
 let regras_transicao = linhas;
-for (let i = 0; i < linhas.length; i++) {
+for (let i in linhas){
   regras_transicao[i] = linhas[i].split(", ");
 }
 
