@@ -1,5 +1,6 @@
 import fs from "fs";
 import Automato from "./src/Automato.mjs";
+import RegraTransicao from "./src/RegraTransicao.mjs";
 
 // Recebe o arquivo
 const file = fs.readFileSync(process.argv.slice(2).toString(), "utf-8");
@@ -20,10 +21,10 @@ primeira_linha = primeira_linha.replace(/(\w\d|\w{2}|\w)/g, '"$1"');
 // Avalia a primeira_linha, uma string, como código para um array 2D
 let componentes_automato = eval(primeira_linha);
 
-// Transforma as outras linhas, com as regras de transição, cada uma num array
+// Instância objetos RegraTransicao para cada linha seguinte do arquivo
 let regras_transicao = linhas;
-for (let i in linhas){
-  regras_transicao[i] = linhas[i].split(", ");
+for (let i in linhas) {
+  regras_transicao[i] = new RegraTransicao(linhas[i].split(", "));
 }
 
 // Instância um objeto Automato, a apartir das informações extraídas do arquivo
