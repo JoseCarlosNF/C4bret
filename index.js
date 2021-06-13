@@ -4,7 +4,7 @@ import Automato from "./src/Automato.mjs";
 // Recebe o arquivo
 const file = fs.readFileSync(process.argv.slice(2).toString(), "utf-8");
 
-// Armazena o conteúdo de cada linha do arquivo em um array
+// Armazena o conteúdo de cada linha como elemento de um array
 let linhas = file.split("\n");
 
 // Transfere a primeira linha do arquivo para a variável primeira_linha
@@ -14,13 +14,13 @@ let primeira_linha = linhas.shift();
 primeira_linha = primeira_linha.replaceAll(/\(|\{/g, "[");
 primeira_linha = primeira_linha.replaceAll(/\)|\}/g, "]");
 
-// Adiciona aspas duplas, aos elementos
+// Adiciona aspas duplas aos elementos, para posterior avaliação como código
 primeira_linha = primeira_linha.replace(/(\w\d|\w{2}|\w)/g, '"$1"');
 
-// Avalia a String string, para transforma-lá em um array
+// Avalia a primeira_linha, uma string, como código para um array 2D
 let componentes_automato = eval(primeira_linha);
 
-// Transforma as linhas seguintes, das regras de transição, cada uma em um array
+// Transforma as outras linhas, com as regras de transição, cada uma num array
 let regras_transicao = linhas;
 for (let i in linhas){
   regras_transicao[i] = linhas[i].split(", ");
