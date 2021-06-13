@@ -3,7 +3,8 @@ import Automato from "./src/Automato.mjs";
 import RegraTransicao from "./src/RegraTransicao.mjs";
 
 // Recebe o arquivo
-const file = fs.readFileSync(process.argv.slice(2).toString(), "utf-8");
+const file = fs.readFileSync(process.argv[2].toString(), "utf-8");
+const palavra = process.argv[3].toString();
 
 // Armazena o conteúdo de cada linha como elemento de um array
 let linhas = file.split("\n");
@@ -28,7 +29,7 @@ for (let i in linhas) {
 }
 
 // Instância um objeto Automato, a apartir das informações extraídas do arquivo
-let automato = new Automato({
+const automato = new Automato({
   alfabeto: componentes_automato[0],
   estados: componentes_automato[1],
   funcao_transicao: componentes_automato[2],
