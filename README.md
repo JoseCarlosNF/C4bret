@@ -29,8 +29,10 @@ Implementation of a Pushdown Automaton.
 Exemplo de execução com os aquivos do próprio repositório.
 
 ```
-node index.js test/automato.txt
+node index.js test/auto-slide-1.txt ab
 ```
+
+### ⚠ Compativel apenas com Node.js >= 15.0.0
 
 O arquivo do parâmetro deve obdecer a formatação descrita no [tópico sobre o arquivo](#arquivo-de-entrada)
 
@@ -39,12 +41,11 @@ O arquivo do parâmetro deve obdecer a formatação descrita no [tópico sobre o
 O caminho do arquivo deve ser utilizado como parâmetro no comando de execução. O arquivo deve ter a seguinte formatação:
 
 ```
-({a, b}, {q0, q1, qf}, D, q0, {qf}, {a, b})
-q0, a, -, q0, a
-q0, b, -, q0, b
-q0, -, -, q1, -
-q1, a, a, q1, -
-q1, b, b, q1, -
+({a, b}, {q0, q1, qf}, D, q0, {qf}, {B})
+q0, a, -, q0, B
+q0, b, B, q1, -
+q0, ?, ?, qf, -
+q1, b, B, q1, -
 q1, ?, ?, qf, -
 ```
 
@@ -53,7 +54,7 @@ q1, ?, ?, qf, -
 A **primeira linha** do arquivo é uma 6-tupla ordenada da seguinte maneira:
 
 ```
-({alfabeto}, {estados_possiveis}, funcao_de_transicao, estado_inicial, {estados_finais}, {pilha})
+({alfabeto}, {estados_possiveis}, funcao_de_transicao, estado_inicial, {estados_finais}, {alfabeto_pilha})
 ```
 
 As **linhas seguites** são suas regras de transisção, representadas da seguinte maneira:
