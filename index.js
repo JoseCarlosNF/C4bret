@@ -35,8 +35,10 @@ const automato = new Automato({
   funcao_transicao: componentes_automato[2],
   estado_inicial: componentes_automato[3],
   estados_finais: componentes_automato[4],
-  pilha: componentes_automato[5],
+  alfabeto_pilha: componentes_automato[5],
 });
 
-console.log("🤖", automato);
-console.log("📏 Regras de Transição: ", regras_transicao);
+// console.log("🤖", automato);
+// console.log("📏 Regras de Transição: ", regras_transicao);
+
+console.log(automato.processaPalavra(regras_transicao, palavra) ? "Palavra Aceita" : "Palavra Recusada");
